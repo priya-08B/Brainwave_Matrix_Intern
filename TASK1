@@ -37,7 +37,16 @@ plt.ylabel('Quantity sold')
 for i in range(sales_df.shape[0]):
  plt.text(sales_df['Price per unit'][i],sales_df['Quantity sold'][i],sales_df['Product Name'][i],fontsize=9)
 plt.show()
+
 ![img1](https://github.com/priya-08B/Brainwave_Matrix_Intern/assets/146112760/973104ab-d6cf-4ff3-8561-1476fd33a8b6)
+
+
+
+
+
+
+
+
 
 
 
