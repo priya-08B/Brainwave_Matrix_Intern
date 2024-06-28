@@ -38,9 +38,45 @@ for i in range(sales_df.shape[0]):
  plt.text(sales_df['Price per unit'][i],sales_df['Quantity sold'][i],sales_df['Product Name'][i],fontsize=9)
 plt.show()
 
-![img1](https://github.com/priya-08B/Brainwave_Matrix_Intern/assets/146112760/973104ab-d6cf-4ff3-8561-1476fd33a8b6)
 
+# Sales Trends Over Time
+sales_trends=sales_df.groupby('Date')['Total Sale Amount'].sum()
 
+# Display Results
+print(f"Total Sales:${total_sales }")
+print(f"Average Sales per Transaction: ${average_sales:.2f}")
+print("\nTop-Selling Products:\n",top_Selling_Products)
+print("\nSales Trends Over Time:\n ",sales_trends)
+
+Total Sales:$125
+Average Sales per Transaction: $25.00
+
+Top-Selling Products:
+ Product Name
+Widget A    5
+Widget C    4
+Widget B    3
+Name: Quantity sold, dtype: int64
+
+Sales Trends Over Time:
+  Date
+1/6/2024    35
+2/6/2024    60
+3/6/2024    30
+Name: Total Sale Amount, dtype: int64
+
+plt.figure(figsize=(10,6))
+top_Selling_Products.plot(kind='bar',color=['#7d3c98','#ff5733','#1ABC9c'])
+plt.title('Top-Selling Products')
+plt.xlabel('Product Name')
+plt.ylabel('Quantity sold')
+plt.show()
+
+plt.figure(figsize=(8,6))
+top_Selling_Products.plot(kind='pie',autopct='%1.1f%%',startangle=140,colors=['#ff9999','#66b3ff','#99ff99'])
+plt.title('Top-Selling Products')
+plt.ylabel('')
+plt.show()
 
 
 
