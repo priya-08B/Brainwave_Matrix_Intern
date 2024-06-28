@@ -59,6 +59,12 @@ plt.show()
 
 
 
+
+
+
+
+
+
 # Sales Trends Over Time
 sales_trends=sales_df.groupby('Date')['Total Sale Amount'].sum()
 
